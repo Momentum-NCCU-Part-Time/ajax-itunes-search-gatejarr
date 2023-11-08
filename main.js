@@ -17,13 +17,11 @@ searchForm.addEventListener('submit', (event) => {
             results.appendChild(errorMsg);
         }
     }).then((parsedJsonResponse) => {
-        console.log(iTunesUrl + term);
-        console.log(response);
-        //console.log(parsedJsonResponse);
+        console.log(parsedJsonResponse);
     })
 }) 
 
-// Search address needs to look like: https://itunes.apple.com/search?term=Madonna
+// Search address should look like: https://itunes.apple.com/search?term=Madonna
 // https://itunes.apple.com/search?term=jack+johnson
 
 //currently returning empty arrays
