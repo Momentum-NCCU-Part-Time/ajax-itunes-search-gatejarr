@@ -1,4 +1,4 @@
-const iTunesUrl = "https://itunes.apple.com/search?";
+const iTunesUrl = "https://itunes.apple.com/search?term=";
 let searchForm = document.getElementById("searchForm");
 let searchTerm = document.getElementById("searchField");
 let button = document.getElementById("searchButton");
@@ -23,5 +23,7 @@ searchForm.addEventListener('submit', (event) => {
 
 // Search address should look like: https://itunes.apple.com/search?term=Madonna
 // https://itunes.apple.com/search?term=jack+johnson
+//https://itunes.apple.com/search?term=madonna&limit=10
+//https://itunes.apple.com/search?term=madonna&limit=10&media=music
 
 //currently returning empty arrays
