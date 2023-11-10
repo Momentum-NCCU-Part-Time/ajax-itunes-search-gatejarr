@@ -25,5 +25,3 @@ searchForm.addEventListener('submit', (event) => {
 // https://itunes.apple.com/search?term=jack+johnson
 //https://itunes.apple.com/search?term=madonna&limit=10
 //https://itunes.apple.com/search?term=madonna&limit=10&media=music
-
-//currently returning empty arrays
