@@ -19,7 +19,18 @@ searchForm.addEventListener('submit', (event) => {
     }).then((parsedJsonResponse) => {
         console.log(parsedJsonResponse);
     })
+
 }) 
+
+// function songTiles (results) {
+//     let songName = document.createElement('h4');
+//     let artistName = document.createElement('h3');
+//     songName.innerHTML = parsedJsonResponse[0]
+
+
+// }
+
+
 
 // Search address should look like: https://itunes.apple.com/search?term=Madonna
 // https://itunes.apple.com/search?term=jack+johnson
