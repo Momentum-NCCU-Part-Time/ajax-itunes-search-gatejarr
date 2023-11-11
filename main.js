@@ -18,7 +18,29 @@ searchForm.addEventListener('submit', (event) => {
         }
     }).then((parsedJsonResponse) => {
         console.log(parsedJsonResponse);
+        const songs = parsedJsonResponse.results;
+        return songs.map(results => {
+            const songTile = document.createElement("songTile"),
+            artist = document.createElement('h4'),
+            song = document.createElement('h5'),
+            img = document.createElement('img'),
+            audio = document.createElement('audio'),
+            audioSrc = document.createElement('source')
+
+        artist.innerHTML = results.artistName;
+        song.innerHTML = results.trackName;
+        img.src = results.artworkUrl100;
+        audioSrc.src = results.previewUrl;
+
+        songTile.appendChild(img);
+        songTile.appendChild(song);
+        songTile.appendChild(artist);
+        songTile.appendChild(audioSrc);
+
+        tiles.appendChild(songTile);
+        })
     })
+
 
 }) 
 
