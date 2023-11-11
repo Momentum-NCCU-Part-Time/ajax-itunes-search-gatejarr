@@ -3,6 +3,8 @@ let searchForm = document.getElementById("searchForm");
 let searchTerm = document.getElementById("searchField");
 let button = document.getElementById("searchButton");
 let results = document.getElementById("results");
+let container = document.getElementById("container");
+
 
 searchForm.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -20,8 +22,8 @@ searchForm.addEventListener('submit', (event) => {
         console.log(parsedJsonResponse);
         const songs = parsedJsonResponse.results;
         return songs.map(results => {
-            const songTile = document.createElement("songTile"),
-            artist = document.createElement('h4'),
+            const songTile = document.createElement("div"),
+            artist = document.createElement('h3'),
             song = document.createElement('h5'),
             img = document.createElement('img'),
             audio = document.createElement('audio'),
@@ -37,7 +39,7 @@ searchForm.addEventListener('submit', (event) => {
         songTile.appendChild(artist);
         songTile.appendChild(audioSrc);
 
-        tiles.appendChild(songTile);
+        container.appendChild(songTile);
         })
     })
 
