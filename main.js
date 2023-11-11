@@ -37,7 +37,7 @@ searchForm.addEventListener('submit', (event) => {
         songTile.appendChild(img);
         songTile.appendChild(song);
         songTile.appendChild(artist);
-        songTile.appendChild(audioSrc);
+    //    songTile.appendChild(audioSrc);
 
         container.appendChild(songTile);
         })

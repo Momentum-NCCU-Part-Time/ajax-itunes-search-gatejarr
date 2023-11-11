@@ -13,3 +13,10 @@
 form {
   margin: 20px;
 }
+
+div {
+  width: 125px;
+  height: auto;
+  border: solid 2px black;
+  text-align: center;
+}
