@@ -1,13 +1,18 @@
-. {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: rgb(210, 210, 210);
 }
 
 #container {
   display: flex;
-  flex: row wrap;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
+  width: 100%;
+  height: auto;
+  border: none;
 }
 
 form {
@@ -15,8 +20,14 @@ form {
 }
 
 div {
-  width: 125px;
+  width: 150px;
   height: auto;
-  border: solid 2px black;
+  /* border: solid 2px black; */
   text-align: center;
+  /* padding: 10px; */
+  margin: 10px;
+}
+
+img {
+  border-radius: 5%;
 }
