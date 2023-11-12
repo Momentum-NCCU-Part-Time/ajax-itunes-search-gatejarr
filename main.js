@@ -24,6 +24,7 @@ searchForm.addEventListener('submit', (event) => {
     }).then((parsedJsonResponse) => {
         console.log(parsedJsonResponse);
         const songs = parsedJsonResponse.results;
+        if (newSearch = true) {
         return songs.map(results => {
             preview.innerHTML = `
             <figure>
@@ -37,6 +38,7 @@ searchForm.addEventListener('submit', (event) => {
                 <h3>${results.artistName}</h3>
                 `
         })
+    }
     })
 
 
@@ -66,8 +68,3 @@ searchForm.addEventListener('submit', (event) => {
         // songTile.appendChild(audioSrc);
 
         // container.appendChild(songTile);
-
-// Search address should look like: https://itunes.apple.com/search?term=Madonna
-// https://itunes.apple.com/search?term=jack+johnson
-//https://itunes.apple.com/search?term=madonna&limit=10
-//https://itunes.apple.com/search?term=madonna&limit=10&media=music
