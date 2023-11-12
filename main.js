@@ -3,6 +3,7 @@ let searchForm = document.getElementById("searchForm");
 let searchTerm = document.getElementById("searchField");
 let button = document.getElementById("searchButton");
 let container = document.getElementById("container");
+let preview = document.getElementById("preview");
 
 
 searchForm.addEventListener('submit', (event) => {
@@ -21,6 +22,11 @@ searchForm.addEventListener('submit', (event) => {
         console.log(parsedJsonResponse);
         const songs = parsedJsonResponse.results;
         return songs.map(results => {
+            preview.innerHTML = `
+            <figure>
+                <figcaption>Preview:</figcaption>
+                <audio controls src=""></audio>
+            </figure>`,
             container.innerHTML += `
             <div class="songTile">
                 <img src=${results.artworkUrl100} />
