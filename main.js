@@ -32,11 +32,13 @@ searchForm.addEventListener('submit', (event) => {
         song.innerHTML = results.trackName;
         img.src = results.artworkUrl100;
         audioSrc.src = results.previewUrl;
+        //audio.controls = true;
 
         songTile.appendChild(img);
         songTile.appendChild(song);
         songTile.appendChild(artist);
-    //    songTile.appendChild(audioSrc);
+        songTile.appendChild(audio);
+        songTile.appendChild(audioSrc);
 
         container.appendChild(songTile);
         })
@@ -44,14 +46,6 @@ searchForm.addEventListener('submit', (event) => {
 
 
 }) 
-
-// function songTiles (results) {
-//     let songName = document.createElement('h4');
-//     let artistName = document.createElement('h3');
-//     songName.innerHTML = parsedJsonResponse[0]
-
-
-// }
 
 
 

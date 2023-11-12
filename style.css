@@ -31,3 +31,8 @@ div {
 img {
   border-radius: 5%;
 }
+
+h1 {
+  text-align: center;
+  margin: 20px;
+}
