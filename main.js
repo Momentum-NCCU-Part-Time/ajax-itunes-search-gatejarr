@@ -21,26 +21,12 @@ searchForm.addEventListener('submit', (event) => {
         console.log(parsedJsonResponse);
         const songs = parsedJsonResponse.results;
         return songs.map(results => {
-            const songTile = document.createElement("div"),
-            artist = document.createElement('h3'),
-            song = document.createElement('h4'),
-            img = document.createElement('img'),
-            audio = document.createElement('audio'),
-            audioSrc = document.createElement('source')
-
-        artist.innerHTML = results.artistName;
-        song.innerHTML = results.trackName;
-        img.src = results.artworkUrl100;
-        audioSrc.src = results.previewUrl;
-        //audio.controls = true;
-
-        songTile.appendChild(img);
-        songTile.appendChild(song);
-        songTile.appendChild(artist);
-        songTile.appendChild(audio);
-        songTile.appendChild(audioSrc);
-
-        container.appendChild(songTile);
+            container.innerHTML += `
+            <div class="songTile">
+                <img src=${results.artworkUrl100} />
+                <button class="preview">${results.trackName}</button>
+                <h3>${results.artistName}</h3>
+                `
         })
     })
 
@@ -48,6 +34,29 @@ searchForm.addEventListener('submit', (event) => {
 }) 
 
 
+
+        // Old way of displaying results on index.html; switched to template literal
+
+        //     const songTile = document.createElement("div"),
+        //     artist = document.createElement('h3'),
+        //     song = document.createElement('h4'),
+        //     img = document.createElement('img'),
+        //     audio = document.createElement('audio'),
+        //     audioSrc = document.createElement('source')
+
+        // artist.innerHTML = results.artistName;
+        // song.innerHTML = results.trackName;
+        // img.src = results.artworkUrl100;
+        // audioSrc.src = results.previewUrl;
+        // //audio.controls = true;
+
+        // songTile.appendChild(img);
+        // songTile.appendChild(song);
+        // songTile.appendChild(artist);
+        // songTile.appendChild(audio);
+        // songTile.appendChild(audioSrc);
+
+        // container.appendChild(songTile);
 
 // Search address should look like: https://itunes.apple.com/search?term=Madonna
 // https://itunes.apple.com/search?term=jack+johnson
