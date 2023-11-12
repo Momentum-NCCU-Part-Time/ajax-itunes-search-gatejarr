@@ -26,6 +26,7 @@ searchForm.addEventListener('submit', (event) => {
                 <img src=${results.artworkUrl100} />
                 <button class="preview">${results.trackName}</button>
                 <h3>${results.artistName}</h3>
+                <a hfref=${results.previewUrl}>Preview</a>
                 `
         })
     })

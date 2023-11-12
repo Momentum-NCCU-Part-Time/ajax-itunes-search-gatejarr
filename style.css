@@ -22,14 +22,15 @@ form {
 div {
   width: 150px;
   height: auto;
-  /* border: solid 2px black; */
   text-align: center;
-  /* padding: 10px; */
   margin: 10px;
 }
 
 img {
-  border-radius: 5%;
+  width: 100%;
+  height: auto;
+  border-radius: 15%;
+  padding: 10px;
 }
 
 h1 {
@@ -37,7 +38,6 @@ h1 {
   margin: 20px;
 }
 
-/* .preview {
-  padding-top: 5px;
-  border: solid 1px gray;
-} */
+.preview {
+  border-radius: 5%;  
+}
