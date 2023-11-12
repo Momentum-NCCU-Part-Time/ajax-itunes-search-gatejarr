@@ -4,19 +4,22 @@ let searchTerm = document.getElementById("searchField");
 let button = document.getElementById("searchButton");
 let container = document.getElementById("container");
 let preview = document.getElementById("preview");
-
+let newSearch = false;
 
 searchForm.addEventListener('submit', (event) => {
     event.preventDefault();
     let term = searchTerm.value;
     console.log(term);
-    fetch(iTunesUrl + term).then((response) => {
+    fetch(iTunesUrl + term, {
+        method: "GET",
+        headers: {"Content-Type": "application/json"},
+    }).then((response) => {
         if (response.status === 200) {
             return response.json();
         } else {
             let errorMsg = document.createElement ('h2');
             errorMsg.innerText = "API call failed, please try again.";
-            results.appendChild(errorMsg);
+            container.appendChild(errorMsg);
         }
     }).then((parsedJsonResponse) => {
         console.log(parsedJsonResponse);
@@ -32,7 +35,6 @@ searchForm.addEventListener('submit', (event) => {
                 <img src=${results.artworkUrl100} />
                 <button class="preview">${results.trackName}</button>
                 <h3>${results.artistName}</h3>
-                <a hfref=${results.previewUrl}>Preview</a>
                 `
         })
     })
