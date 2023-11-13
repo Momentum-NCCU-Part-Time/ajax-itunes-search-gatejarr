@@ -45,8 +45,7 @@ searchForm.addEventListener('submit', (event) => {
 }) 
 
 
-
-        // Old way of displaying results on index.html; switched to template literal
+//uh oh
 
         //     const songTile = document.createElement("div"),
         //     artist = document.createElement('h3'),
