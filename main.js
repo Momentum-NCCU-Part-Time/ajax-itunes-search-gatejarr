@@ -43,27 +43,3 @@ searchForm.addEventListener('submit', (event) => {
 
 
 }) 
-
-
-//uh oh
-
-        //     const songTile = document.createElement("div"),
-        //     artist = document.createElement('h3'),
-        //     song = document.createElement('h4'),
-        //     img = document.createElement('img'),
-        //     audio = document.createElement('audio'),
-        //     audioSrc = document.createElement('source')
-
-        // artist.innerHTML = results.artistName;
-        // song.innerHTML = results.trackName;
-        // img.src = results.artworkUrl100;
-        // audioSrc.src = results.previewUrl;
-        // //audio.controls = true;
-
-        // songTile.appendChild(img);
-        // songTile.appendChild(song);
-        // songTile.appendChild(artist);
-        // songTile.appendChild(audio);
-        // songTile.appendChild(audioSrc);
-
-        // container.appendChild(songTile);
