@@ -5,6 +5,7 @@ let searchTerm = document.getElementById("searchField");
 let button = document.getElementById("searchButton");
 let container = document.getElementById("container");
 let preview = document.getElementById("preview");
+let previewButton = document.getElementById("previewButton");
 
  searchForm.addEventListener('submit', (event) => {
      event.preventDefault();
@@ -27,19 +28,30 @@ let preview = document.getElementById("preview");
          return songs.map(results => {
              preview.innerHTML = `
              <figure>
-                 <figcaption>Preview:</figcaption>
+                 <figcaption id="previewTrackName">Preview:</figcaption>
                  <audio controls src=""></audio>
              </figure>`,
              container.innerHTML += `
              <div class="songTile">
                  <img src=${results.artworkUrl100} />
-                 <button class="preview">${results.trackName}</button>
+                 <button class="previewButton" data-id=${results.trackId}>${results.trackName}</button>
                  <h3>${results.artistName}</h3>
               </div>
                  `
+            // dataset.id.addEventListener.("click", (event){
+            //     event.preventDefault();
+            //     preview.src=results.previewUrl;
+
+            // })
+
          })
+
      })
  }) 
+
+
+
+
 
 //  songElement.addEventListener("click", function (event) {
 //     if (event.target.textContent.includes(song.trackName)) {
