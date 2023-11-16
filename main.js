@@ -5,7 +5,7 @@ let searchTerm = document.getElementById("searchField");
 let button = document.getElementById("searchButton");
 let container = document.getElementById("container");
 let preview = document.getElementById("preview");
-let previewButton = document.getElementById("previewButton");
+//let previewButton = document.getElementById("previewButton");
 
  searchForm.addEventListener('submit', (event) => {
      event.preventDefault();
@@ -25,6 +25,9 @@ let previewButton = document.getElementById("previewButton");
      }).then((parsedJsonResponse) => {
          console.log(parsedJsonResponse);
          const songs = parsedJsonResponse.results;
+         if(parsedJsonResponse.resultCount === 0) {
+            alert('No Results found. Please try again.')
+         }else{
          return songs.map(results => {
              preview.innerHTML = `
              <figure>
@@ -43,12 +46,23 @@ let previewButton = document.getElementById("previewButton");
             //     preview.src=results.previewUrl;
 
             // })
-
+            let previewButtons = document.querySelectorAll(".previewButton");
+            for (let button of previewButtons) {
+                button.addEventListener("click", (e) =>{
+                event.preventDefault()
+                let previewId = results.trackId;
+                console.log(previewId);
+            })
+            }
          })
-
+        }
      })
  }) 
-
+// previewButton.addEventListener('click', (e) => {
+//     e.preventDefault();
+//     let previewId = dataset.trackId;
+//     console.log(previewId);
+// })
 
 
 
