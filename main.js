@@ -28,8 +28,9 @@ let preview = document.getElementById("preview");
          if(parsedJsonResponse.resultCount === 0) {
             alert('No Results found. Please try again.')
          }else{
-         return songs.map(results => {
-             preview.innerHTML = `
+         let songTracks = songs.map(results => {
+         // this is in a loop
+            preview.innerHTML = `
              <figure>
                  <figcaption id="previewTrackName">Preview:</figcaption>
                  <audio controls src=""></audio>
@@ -41,23 +42,20 @@ let preview = document.getElementById("preview");
                  <h3>${results.artistName}</h3>
               </div>
                  `
-            // dataset.id.addEventListener.("click", (event){
-            //     event.preventDefault();
-            //     preview.src=results.previewUrl;
 
-            // })
-            let previewButtons = document.querySelectorAll(".previewButton");
-            for (let button of previewButtons) {
-                button.addEventListener("click", (e) =>{
-                event.preventDefault()
-                let previewId = results.trackId;
-                console.log(previewId);
-            })
-            }
-         })
+            //Break out into own function outside of fetch request and call the function
+            //Should loop through all preview buttons
+        //  }),let previewButtons = document.querySelectorAll(".previewButton");
+        //  for (let button of previewButtons) {
+        //      button.addEventListener("click", (e) =>{
+        //      event.preventDefault()
+        //      let previewId = results.trackId;
+        //      console.log(previewId);
+          })
+        //  }
         }
-     })
- }) 
+      })
+ })
 // previewButton.addEventListener('click', (e) => {
 //     e.preventDefault();
 //     let previewId = dataset.trackId;
@@ -120,5 +118,3 @@ let preview = document.getElementById("preview");
 //         this.searchButton();
 //     },
 // };
-
-// app.main();
