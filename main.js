@@ -5,6 +5,7 @@ let searchTerm = document.getElementById("searchField");
 let button = document.getElementById("searchButton");
 let container = document.getElementById("container");
 let preview = document.getElementById("preview");
+let previewTitle = document.getElementById("previewTitle");
 
 searchForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -38,6 +39,7 @@ searchForm.addEventListener('submit', (e) => {
       previewButton.addEventListener('click', (e) => {
         e.preventDefault();
         preview.src = results.previewUrl;
+        previewTitle.innerText += " " + results.trackName;
       });
 
       artist.innerHTML = results.artistName;
