@@ -32,7 +32,7 @@ searchForm.addEventListener('submit', (e) => {
       artist = document.createElement('h3');
       songTitle = document.createElement('p');
       albumArt = document.createElement('img');
-      let previewButton = document.createElement('button');
+      previewButton = document.createElement('button');
       
       //Song Preview
       previewButton.innerText = "Play Preview";
@@ -40,6 +40,7 @@ searchForm.addEventListener('submit', (e) => {
         e.preventDefault();
         preview.src = results.previewUrl;
         previewTitle.innerText += " " + results.trackName;
+        console.log(results.previewUrl);
       });
 
       artist.innerHTML = results.artistName;
